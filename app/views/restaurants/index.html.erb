@@ -1,0 +1,19 @@
+<div class="container">
+<h1>Restaurants Index</h1>
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+
+            <%= link_to restaurant.name, restaurant_path(restaurant["id"]) %>
+
+          <%# <%= link_to raw('<i class="fa-solid fa-dumpster"></i>'),
+            task_path(task),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+          %>
+
+
+      </li>
+    <% end %>
+
+    <%= link_to 'Create New Restaurant', new_restaurant_path %>
+  </ul>
